@@ -1,0 +1,433 @@
+@font-face {
+	font-family: 'Authentic-90';
+	src: url('fonts/AUTHENTICSans-90.woff') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Authentic-130';
+	src: url('fonts/AUTHENTICSans-130.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--body-font: 'Authentic-90', 'Arial', sans-serif;
+	--title-font: 'Authentic-130', 'Arial Narrow', sans-serif;
+	--secondary-font: 'Times New Roman', serif;
+	--text: #000000;
+	--grey: #676767;
+	--red: red;
+	--green: #00e526;
+	--title: #000;
+	font-family: var(--body-font);
+	color: var(--text);
+	font-size: 16px;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+::selection {
+	color: white;
+	background-color: var(--title);
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	scrollbar-color: #262626;
+	scrollbar-width: 4px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	background-image: linear-gradient(
+		to bottom,
+		white,
+		#efefef 12%,
+		#efefef 24%,
+		var(--green) 32%,
+		var(--green) 93%,
+		#e4e4e4 97%,
+		white
+	);
+}
+
+.placeholder {
+	width: 100%;
+	height: 200vh;
+	overflow-y: hidden;
+}
+
+.placeholder p {
+	text-align: center;
+}
+
+main,
+header,
+footer {
+	width: 90vw;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	/* height: 100vh; */
+	justify-content: center;
+	padding: 4rem 0;
+	z-index: 4;
+}
+
+header nav {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 4rem;
+	z-index: 4;
+}
+
+header nav a[href='#'],
+li[data-confirm='undefined'],
+details[data-confirm='undefined'],
+main .media span[data-confirm='undefined'],
+p[data-confirm='undefined'],
+p[data-confirm=''],
+section a[href='undefined'] {
+	display: none;
+}
+
+header nav a {
+	text-decoration: none;
+	color: var(--title);
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	font-family: var(--body-font);
+	width: max-content;
+	padding: 2px 0.35rem 0 0;
+	border: 1px solid rgba(255, 255, 255, 0);
+}
+
+header nav a::before {
+	content: '>';
+	/* width: 4px;
+	height: 4px; */
+	/* background: white; */
+	opacity: 0;
+	/* display: inline-flex; */
+	/* border-radius: 1rem;
+	margin: 3px 0.5rem; */
+	margin: 0 0.25rem;
+}
+
+header nav a:hover {
+	/* color: var(--green);
+	background: white; */
+	/* background: var(--green); */
+	border: 1px solid var(--green);
+}
+
+header nav a:hover::before {
+	content: '>';
+	/* width: 4px;
+	height: 4px; */
+	/* background: var(--green); */
+	/* display: inline-flex; */
+	/* border-radius: 1rem;
+	margin: 3px 0.5rem; */
+	opacity: 1;
+	display: inline-block;
+	/* color: var(--green); */
+	color: var(--text);
+}
+
+/* header .signUpButtonBg,
+header .signUpButton {
+	position: fixed;
+	right: 1rem;
+	text-align: center;
+	height: 6rem;
+	width: 16rem;
+} */
+
+.logo-desktop {
+	display: block;
+}
+
+.logo-mobile {
+	display: none;
+}
+
+main {
+	width: 60%;
+	position: relative;
+	padding: 10vh 0;
+}
+
+main nav a[href='#'],
+li[data-confirm='undefined'],
+details[data-confirm='undefined'],
+p[data-confirm='undefined'],
+main section p[data-confirm='undefined'],
+main section em[data-confirm='undefined'] {
+	display: none;
+}
+
+main nav a {
+	text-decoration: none;
+	color: var(--text);
+	text-transform: uppercase;
+	font-size: 0.85rem;
+}
+
+main nav a:hover {
+	text-decoration: underline;
+}
+
+main section {
+	grid-column: 2;
+	font-size: 1.25rem;
+}
+
+main section p:first-of-type {
+	padding-top: 4rem;
+	text-transform: uppercase;
+	font-family: var(--title-font);
+	font-size: 2rem;
+	color: var(--title);
+}
+
+main section p {
+	margin: 0 0 1rem 0;
+}
+
+.signUpButton {
+	width: 100%;
+	text-align: center;
+	border: 1px solid black;
+	padding: 1rem;
+	box-shadow: 0px 0px 12px 4px white inset;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.signUpButton:hover {
+	box-shadow: 0px 0px 6px 4px white inset;
+}
+
+.signUpButton a {
+	text-align: center;
+	color: var(--text);
+	text-decoration: none;
+}
+
+.letter em {
+	font-style: normal;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+main .signatories li {
+	list-style: none;
+}
+
+main .signatories em {
+	font-style: normal;
+	/* color: var(--grey); */
+	margin-left: 1rem;
+	text-transform: none;
+	font-size: 0.85rem;
+	font-family: var(--body-font);
+}
+
+main .signatories em:nth-of-type(1)::after {
+	content: 'total';
+	margin-left: 0.25rem;
+}
+
+main .signatories div {
+	padding-bottom: 1rem;
+}
+
+main .signatories div a:nth-of-type(1)::before {
+	/* content: '+'; */
+	content: '\2717';
+	/* content:  "\2714"; */
+}
+
+main .signatories div a {
+	/* color: var(--grey); */
+	/* color: white; */
+	text-decoration: none;
+	color: var(--title);
+	background: white;
+}
+
+main .signatories div a:nth-of-type(1) {
+	/* border: 1px solid white; */
+	border: 1px solid var(--title);
+	/* border-radius: 2rem; */
+	padding: 0.5rem 1rem;
+	margin-bottom: 1rem;
+	/* box-shadow: 0 0 12px 4px white inset; */
+	/* background: var(--title); */
+}
+
+main .signatories div a:hover {
+	/* text-decoration: underline;
+	text-decoration-color: white;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 2px; */
+	/* color: var(--title);
+
+			background: white; */
+	/* border: 1px solid var(--green); */
+	/* border: 1px solid var(--title); */
+	background-color: #e4e4e4;
+}
+
+main .signatories div + div {
+	margin: 1rem 0;
+}
+
+main section details {
+	cursor: pointer;
+}
+
+main section details summary div {
+	padding: 1rem;
+}
+
+main section details .faq {
+	border-left: 2px solid var(--text);
+	margin-left: 4px;
+	text-align: justify;
+	padding: 1.25rem;
+}
+
+main section details .faq,
+main .media span p {
+	text-transform: none;
+	font-size: 1.25rem;
+	color: var(--text);
+	font-family: var(--body-font);
+}
+
+main .media span {
+	display: block;
+	margin: 0 0 2rem 0;
+}
+
+main .media span p {
+	padding-top: 0;
+}
+
+main .media span a {
+	/* padding-left: 10%; */
+	display: block;
+	font-size: 1rem;
+}
+
+main .media span a::before {
+	content: '';
+	width: 8%;
+	height: 1px;
+	background: black;
+	display: inline-block;
+	margin-bottom: 0.25rem;
+	margin-right: 0.25rem;
+}
+
+main section a {
+	text-decoration: none;
+	color: var(--text);
+}
+
+h1 {
+	text-align: center;
+	text-transform: capitalize;
+	padding: 1rem;
+}
+
+footer {
+	padding: 4rem 0;
+	text-align: right;
+}
+
+footer p {
+	color: var(--grey);
+	font-size: 0.85rem;
+}
+
+footer p:nth-of-type(1)::before {
+	content: 'Last updated';
+	margin-right: 0.25rem;
+}
+
+@media only screen and (max-width: 1024px) {
+	header nav {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		top: 1rem;
+		z-index: 4;
+		justify-content: space-between;
+		width: calc(100% - 6rem);
+		left: 3rem;
+	}
+
+	main {
+		width: calc(100% - 6rem);
+		position: relative;
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.logo-desktop {
+		display: none;
+	}
+
+	.logo-mobile {
+		display: block;
+	}
+
+	main,
+	header,
+	footer {
+		width: calc(100% - 2rem);
+	}
+
+	header nav {
+		top: 1rem;
+		z-index: 4;
+		justify-content: space-between;
+		width: calc(100% - 4rem);
+		left: 2rem;
+	}
+
+	header nav a::before {
+		content: none;
+		margin: 0;
+	}
+	header nav a {
+		margin: 0;
+		padding: 0;
+	}
+}

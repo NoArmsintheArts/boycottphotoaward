@@ -170,6 +170,10 @@ header nav .navItem__about::after {
 	content: ' / à propos';
 }
 
+header nav .navItem__media::after {
+	content: ' / médias';
+}
+
 .logo-desktop {
 	display: block;
 }

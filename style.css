@@ -1,0 +1,612 @@
+@font-face {
+	font-family: 'Authentic-60';
+	src: url('fonts/AUTHENTICSans-60.woff') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Authentic-90';
+	src: url('fonts/AUTHENTICSans-90.woff') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Authentic-130';
+	src: url('fonts/AUTHENTICSans-130.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--light-font: 'Authentic-60', 'Arial', sans-serif;
+	--body-font: 'Authentic-90', 'Arial', sans-serif;
+	--title-font: 'Authentic-130', 'Arial Narrow', sans-serif;
+	--secondary-font: 'Times New Roman', serif;
+	--text: #000000;
+	--grey: #676767;
+	--red: red;
+	--green: #00e526;
+	--title: #000;
+	font-family: var(--body-font);
+	color: var(--text);
+	font-size: 16px;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+::selection {
+	color: white;
+	background-color: var(--title);
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	scrollbar-color: #262626;
+	scrollbar-width: 4px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(
+		to bottom,
+		white,
+		#efefef 12%,
+		#efefef 24%,
+		var(--green) 32%,
+		var(--green) 93%,
+		#e4e4e4 97%,
+		white
+	);
+}
+
+.placeholder {
+	width: 100%;
+	height: 200vh;
+	overflow-y: hidden;
+}
+
+.placeholder p {
+	text-align: center;
+}
+
+main,
+header,
+footer {
+	width: 90vw;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	/* height: 100vh; */
+	justify-content: center;
+	padding: 4rem 0;
+	z-index: 4;
+}
+
+header .mobileMenu__container div {
+	display: block;
+}
+
+header .mobileMenu__container .mobileMenu--openBtn {
+	opacity: 0;
+}
+
+header nav {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 4rem;
+	z-index: 4;
+}
+
+header nav a[href='#'],
+li[data-confirm='undefined'],
+details[data-confirm='undefined'],
+main .media span[data-confirm='undefined'],
+p[data-confirm='undefined'],
+p[data-confirm=''],
+section a[href='undefined'] {
+	display: none;
+}
+
+header nav a {
+	text-decoration: none;
+	color: var(--title);
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	font-family: var(--body-font);
+	width: max-content;
+	padding: 2px 0.35rem 0 0;
+	border: 1px solid rgba(255, 255, 255, 0);
+}
+
+header nav a::before {
+	content: '>';
+	opacity: 0;
+	margin: 0 0.25rem;
+}
+
+header nav a:hover {
+	border: 1px solid var(--green);
+}
+
+header nav a:hover::before {
+	content: '>';
+
+	opacity: 1;
+	display: inline-block;
+	/* color: var(--green); */
+	color: var(--text);
+}
+
+header nav .navItem__pledge::after {
+	content: ' / déclaration';
+}
+
+header nav .navItem__signatories::after {
+	content: ' / signataires';
+}
+
+header nav .navItem__about::after {
+	content: ' / à propos';
+}
+
+.logo-desktop {
+	display: block;
+}
+
+.logo-mobile {
+	display: none;
+}
+
+main {
+	width: 50%;
+	position: relative;
+	padding: 10vh 0;
+}
+
+main nav a[href='#'],
+li[data-confirm='undefined'],
+details[data-confirm='undefined'],
+p[data-confirm='undefined'],
+main section p[data-confirm='undefined'],
+main section em[data-confirm='undefined'] {
+	display: none;
+}
+
+main nav a {
+	text-decoration: none;
+	color: var(--text);
+	text-transform: uppercase;
+	font-size: 0.85rem;
+}
+
+main nav a:hover {
+	text-decoration: underline;
+}
+
+main section {
+	grid-column: 2;
+	font-size: 1.25rem;
+}
+
+main section p:first-of-type,
+main .pledge p:nth-of-type(7) {
+	padding-top: 4rem;
+	text-transform: uppercase;
+	font-family: var(--title-font);
+	font-size: 2rem;
+	color: var(--title);
+}
+
+main section p {
+	margin: 0 0 1rem 0;
+}
+
+.signUpButton {
+	width: 100%;
+	text-align: center;
+	border: 1px solid black;
+	padding: 1rem;
+	box-shadow: 0px 0px 12px 4px white inset;
+	cursor: pointer;
+}
+
+.signUpButton:hover {
+	box-shadow: 0px 0px 12px 2px var(--green) inset;
+	/* border-style: dotted; */
+}
+
+/* .signUpButton:hover a {
+	text-decoration: underline;
+} */
+
+.signUpButton a {
+	text-align: center;
+	color: var(--text);
+	text-decoration: none;
+}
+
+.pledge em,
+.faq em {
+	font-style: normal;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+main .signatories li {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+main .signatoriesTitle p:first-of-type {
+	padding: 0;
+	margin-right: 0.25rem;
+}
+
+main .signatoriesTitle p:first-of-type::after {
+	content: '\2027';
+	margin-left: 0.25rem;
+}
+
+main .signatoriesTitle p {
+	margin: 0;
+}
+
+main .signatoriesTitle p:nth-of-type(2) {
+	font-family: var(--light-font);
+}
+
+main .signatories em {
+	font-style: normal;
+	margin-left: 1rem;
+	text-transform: none;
+	font-size: 0.85rem;
+	font-family: var(--body-font);
+}
+
+main .signatories em:nth-of-type(1)::after {
+	content: 'total';
+	margin-left: 0.25rem;
+}
+
+main .signatories div {
+	padding-bottom: 1rem;
+}
+
+main .signatories div a:nth-of-type(1)::before {
+	/* content: '+'; */
+	content: '\2717';
+	/* content:  "\2714"; */
+}
+
+main .signatories div a {
+	/* color: var(--grey); */
+	/* color: white; */
+	text-decoration: none;
+	color: var(--title);
+	background: white;
+}
+
+main .signatories div a:nth-of-type(1) {
+	/* border: 1px solid white; */
+	border: 1px solid var(--title);
+	/* border-radius: 2rem; */
+	padding: 0.5rem 1rem;
+	margin-bottom: 1rem;
+	/* box-shadow: 0 0 12px 4px white inset; */
+	/* background: var(--title); */
+}
+
+main .signatories div a:hover {
+	/* text-decoration: underline;
+	text-decoration-color: white;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 2px; */
+	/* color: var(--title);
+
+			background: white; */
+	/* border: 1px solid var(--green); */
+	/* border: 1px solid var(--title); */
+	background-color: #e4e4e4;
+}
+
+main .signatories div + div {
+	margin: 1rem 0;
+}
+
+main section details {
+	margin: 1rem 0;
+}
+
+main section details summary {
+	cursor: pointer;
+}
+
+main section details:first-of-type main section details summary div {
+	padding: 1rem;
+}
+
+main section details .faq {
+	border-left: 1px solid white;
+	margin-left: 5px;
+	padding: 1.25rem;
+}
+
+main section details .faq a {
+	text-decoration: none;
+	color: white;
+	vertical-align: super;
+	font-size: 0.85rem;
+	padding: 0 2px;
+}
+
+main section details:nth-of-type(8) .faq a {
+	font-size: 1.25rem;
+	vertical-align: baseline;
+	padding: 1px 4px 0 4px;
+}
+
+main section details .faq,
+main .media span p,
+main .signatories li,
+main .signatories li p {
+	text-transform: none;
+	font-size: 1.25rem;
+	color: var(--text);
+	font-family: var(--body-font);
+}
+
+main .about a {
+	color: white;
+}
+
+main .about a:hover,
+main .media a:hover,
+main .faq a:hover {
+	text-decoration: underline;
+}
+
+main .media span {
+	display: block;
+	margin: 0 0 2rem 0;
+}
+
+main .media span p {
+	padding-top: 0;
+	text-align: justify;
+}
+
+main .media span a {
+	/* padding-left: 10%; */
+	display: block;
+	font-size: 1rem;
+	color: white;
+}
+
+main .media span a::before {
+	content: '';
+	width: 8%;
+	height: 1px;
+	background: white;
+	display: inline-block;
+	margin-bottom: 0.25rem;
+	margin-right: 0.25rem;
+}
+
+main section a {
+	text-decoration: none;
+	color: var(--text);
+}
+
+main section p {
+	cursor: default;
+}
+
+h1 {
+	text-align: center;
+	text-transform: capitalize;
+	padding: 1rem;
+}
+
+.faq sup {
+	background: black;
+	padding: 3px 2px 0 2px;
+	margin: 0 0 0.5rem 0;
+	color: white;
+	text-transform: capitalize;
+	display: block;
+	width: fit-content;
+	border: 1px solid black;
+	line-height: 1;
+}
+
+footer {
+	padding: 4rem 0;
+	text-align: right;
+}
+
+footer p {
+	font-size: 0.85rem;
+	color: var(--grey);
+}
+
+footer p:nth-of-type(1)::before {
+	content: 'Last updated';
+	margin-right: 0.25rem;
+}
+
+@media only screen and (max-width: 1240px) {
+	header {
+		padding: 2rem 0 4rem 0;
+	}
+	
+	header .mobileMenu__container div {
+		display: block;
+	}
+
+	header nav {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		top: calc(100% - 2.5rem);
+		z-index: 4;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		height: 2.5rem;
+		left: 0;
+		background: white;
+		position: fixed;
+		border-top: 1px solid var(--grey);
+	}
+
+	header nav a {
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+
+	header nav a:hover {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	header nav a:hover::before,
+	header nav a::before {
+		content: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	main {
+		width: calc(100% - 6rem);
+		position: relative;
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.logo-desktop {
+		display: none;
+	}
+
+	.logo-mobile {
+		display: block;
+	}
+
+	body {
+		overflow-x: hidden;
+		touch-action: pan-y;
+	}
+
+	main,
+	header,
+	footer {
+		width: calc(100% - 4rem);
+	}
+
+	header {
+		padding: 1rem 0 4rem 0;
+	}
+
+	header .mobileMenu__container {
+		bottom: 0;
+		left: 0;
+		height: auto;
+		position: fixed;
+		width: 100%;
+		background: white;
+		border-top: 1px solid var(--text);
+		z-index: 4;
+		display: flex;
+		flex-direction: column;
+		line-height: 1;
+	}
+
+	header .mobileMenu__container .mobileMenu--openBtn,
+	header .mobileMenu__container nav a {
+		padding: 0.65rem 0.25rem 0.45rem 0.25rem;
+		width: 100%;
+		font-size: 1.25rem;
+	}
+
+	header .mobileMenu__container .mobileMenu--openBtn {
+		opacity: 1;
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+		height: inherit;
+		background: #efefef;
+		margin: 0;
+		font-family: var(--light-font);
+	}
+
+	header .mobileMenu__container div {
+		display: none;
+	}
+
+	header nav {
+		position: relative;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		background: white;
+		border-top: none;
+		height: auto;
+	}
+
+	header .mobileMenu__container nav a {
+		text-align: center;
+		border-top: 1px dotted var(--grey);
+	}
+
+	header nav a::before {
+		/* content: '>';
+		opacity: 1;
+		margin: 0 0.25rem; */
+	}
+
+	/* header nav {
+		top: calc(100% - 3.5rem);
+		height: 3.5rem;
+	}
+
+	header nav a {
+		width: 20%;
+		padding: 0 0.5rem;
+		text-align: center;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	} */
+
+	.signUpButton {
+		border: 1px solid black;
+		box-shadow: 0px 0px 12px 4px var(--green) inset;
+		/* box-shadow: 4px 4px 0px 0px var(--green); */
+		background: white;
+	}
+}

@@ -124,7 +124,7 @@ details[data-confirm='undefined'],
 main .media span[data-confirm='undefined'],
 p[data-confirm='undefined'],
 p[data-confirm=''],
-section a[href='undefined'] {
+section a[href='undefined'], main .signatories h5[data-confirm='undefined'] {
 	display: none;
 }
 
@@ -213,13 +213,15 @@ main section {
 	font-size: 1.25rem;
 }
 
-main section p:first-of-type,
+main .pledge p:first-of-type,
+main section h1,
 main .pledge p:nth-of-type(7) {
 	padding-top: 4rem;
 	text-transform: uppercase;
 	font-family: var(--title-font);
 	font-size: 2rem;
 	color: var(--title);
+	text-align: left;
 }
 
 main section p {
@@ -282,15 +284,16 @@ main .signatoriesTitle p:nth-of-type(2) {
 	font-family: var(--light-font);
 }
 
-main .signatories em {
+main .signatories h5 {
 	font-style: normal;
 	margin-left: 1rem;
 	text-transform: none;
 	font-size: 0.85rem;
 	font-family: var(--body-font);
+	display: inline;
 }
 
-main .signatories em:nth-of-type(1)::after {
+main .signatories h5:nth-of-type(1)::after {
 	content: 'total';
 	margin-left: 0.25rem;
 }
@@ -428,11 +431,6 @@ main section p {
 	cursor: default;
 }
 
-h1 {
-	text-align: center;
-	text-transform: capitalize;
-	padding: 1rem;
-}
 
 .faq sup {
 	background: black;
@@ -586,31 +584,9 @@ footer p:nth-of-type(1)::before {
 		border-top: 1px dotted var(--grey);
 	}
 
-	header nav a::before {
-		/* content: '>';
-		opacity: 1;
-		margin: 0 0.25rem; */
-	}
-
-	/* header nav {
-		top: calc(100% - 3.5rem);
-		height: 3.5rem;
-	}
-
-	header nav a {
-		width: 20%;
-		padding: 0 0.5rem;
-		text-align: center;
-		display: -webkit-box;
-		-webkit-line-clamp: 1;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-	} */
-
 	.signUpButton {
 		border: 1px solid black;
 		box-shadow: 0px 0px 12px 4px var(--green) inset;
-		/* box-shadow: 4px 4px 0px 0px var(--green); */
 		background: white;
 	}
 }

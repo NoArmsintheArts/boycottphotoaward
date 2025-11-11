@@ -37,11 +37,11 @@ $(document).ready(function () {
 				).appendTo('#signatories');
 
 				let pre = $(
-					`<em data-confirm="` +
+					`<h5 data-confirm="` +
 						entry.signatoriesTotal +
 						`">` +
 						entry.signatoriesTotal +
-						`</em>`
+						`</h5>`
 				).appendTo('#signatoriesTotal');
 
 				let a = $(

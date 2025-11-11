@@ -298,10 +298,6 @@ main .signatories h5:nth-of-type(1)::after {
 	margin-left: 0.25rem;
 }
 
-main .signatories div {
-	padding-bottom: 1rem;
-}
-
 main .signatories div a:nth-of-type(1)::before {
 	/* content: '+'; */
 	content: '\2717';
